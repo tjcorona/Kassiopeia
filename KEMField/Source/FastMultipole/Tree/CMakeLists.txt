@@ -6,6 +6,7 @@ mark_as_advanced(FORCE KEMField_MULTIPOLE_BUFFER)
 add_cflag(KEMFIELD_MULTIPOLE_BUFFER_SIZE_MB=${KEMField_MULTIPOLE_BUFFER})
 
 kasper_internal_include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
+kasper_internal_include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 set (TREE_HEADERFILES
     ${CMAKE_CURRENT_SOURCE_DIR}/include/KFMSubdivisionStrategy.hh
@@ -64,6 +65,9 @@ set (TREE_SOURCEFILES
 ##################################################
 
 add_library (KFMTree SHARED ${TREE_SOURCEFILES})
+include(GenerateExportHeader)
+generate_export_header(KFMTree EXPORT_FILE_NAME KFMTreeExport.hh)
+kasper_install_headers(${CMAKE_CURRENT_BINARY_DIR}/KFMTreeExport.hh)
 target_link_libraries (KFMTree KFMCore KFMMath KFMMathUtilities KFMKernel KEMStructuredASCII)
 
 kasper_install_headers (${TREE_HEADERFILES})

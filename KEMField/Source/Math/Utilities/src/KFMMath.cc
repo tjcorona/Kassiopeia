@@ -1,5 +1,6 @@
 #include "KFMMath.hh"
 
+#include <cassert>
 #include <cstdlib>
 
 namespace KEMField{
@@ -1156,6 +1157,8 @@ KFMMath::RegularSolidHarmonic_Cart_Array(int n_max, const double* cartesian_coor
     double r = KFMMath::Radius(cartesian_coords);
 
     //compute the array of powers of r
+    assert(false);
+/*
     double r_pow[n_max+1];
     r_pow[0] = 1.0;
     for(int i=1; i <= n_max; i++)
@@ -1215,6 +1218,7 @@ KFMMath::RegularSolidHarmonic_Cart_Array(int n_max, const double* cartesian_coor
             result[n*(n+1) - m] = std::conj(result[n*(n+1) + m]);
         }
     }
+*/
 }
 
 
@@ -1231,6 +1235,8 @@ KFMMath::IrregularSolidHarmonic_Cart_Array(int n_max, const double* cartesian_co
     double inv_r = 1.0/KFMMath::Radius(cartesian_coords);
 
     //compute the array of powers of r
+    assert(false);
+/*
     double r_pow[n_max+1];
     r_pow[0] = inv_r;
     for(int i=1; i <= n_max; i++)
@@ -1290,7 +1296,7 @@ KFMMath::IrregularSolidHarmonic_Cart_Array(int n_max, const double* cartesian_co
             result[n*(n+1) - m] = std::conj(result[n*(n+1) + m]);
         }
     }
-
+*/
 }
 
 

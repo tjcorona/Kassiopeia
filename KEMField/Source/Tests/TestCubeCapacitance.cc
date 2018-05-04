@@ -393,7 +393,7 @@ robinHood.Solve(A,x,b);
     }
 
     std::cout<<""<<std::endl;
-    double C = Q/(4.*M_PI*KEMConstants::Eps0);
+    double C = Q/(4.*KEMConstants::Pi*KEMConstants::Eps0);
 
     double C_Read = 0.6606785;
     double C_Read_err = 0.0000006;

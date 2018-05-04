@@ -125,7 +125,7 @@ int main()
 
 		const double costhetaFP = -1.+2.*randomnumber();
 		const double sinthetaFP = sqrt( 1. - POW2(costhetaFP) );
-		const double phiFP = 2.*M_PI*randomnumber();
+		const double phiFP = 2.*KEMConstants::Pi*randomnumber();
 
 		fPointDirections.push_back( KEMThreeVector(
 				sinthetaFP*cos(phiFP),

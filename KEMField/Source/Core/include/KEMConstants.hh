@@ -1,17 +1,19 @@
 #ifndef KEMCONSTANTS_DEF
 #define KEMCONSTANTS_DEF
 
+#include "KEMCoreExport.hh"
+
 namespace KEMField
 {
   class KEMConstants
   {
   public:
-    static const double Pi;
-    static const double PiOverTwo;
-    static const double Eps0;
-    static const double OneOverFourPiEps0;
-    static const double Mu0;
-    static const double Mu0OverPi;
+    static KEMCORE_EXPORT const double Pi;
+    static KEMCORE_EXPORT const double PiOverTwo;
+    static KEMCORE_EXPORT const double Eps0;
+    static KEMCORE_EXPORT const double OneOverFourPiEps0;
+    static KEMCORE_EXPORT const double Mu0;
+    static KEMCORE_EXPORT const double Mu0OverPi;
   };
 }
 

@@ -1,5 +1,7 @@
 #include "KFMElectrostaticLocalCoefficientCalculatorNumeric.hh"
 
+#include <cassert>
+
 namespace KEMField
 {
 
@@ -9,8 +11,9 @@ KFMElectrostaticLocalCoefficientCalculatorNumeric::KFMElectrostaticLocalCoeffici
     fNumInt1D = new KVMPathIntegral<2>();
     fNumInt2D = new KVMSurfaceIntegral<2>();
 
-    fSolidHarmonicWrapper = new KVMFieldWrapper< KFMElectrostaticLocalCoefficientCalculatorNumeric,
-                                                &KFMElectrostaticLocalCoefficientCalculatorNumeric::IrregularSolidHarmonic>(this, 3, 2);
+assert(0);
+//    fSolidHarmonicWrapper = new KVMFieldWrapper< KFMElectrostaticLocalCoefficientCalculatorNumeric,
+//                                                &KFMElectrostaticLocalCoefficientCalculatorNumeric::IrregularSolidHarmonic>(this, 3, 2);
 
     fLine = new KVMLineSegment();
     fTriangle = new KVMTriangularSurface();

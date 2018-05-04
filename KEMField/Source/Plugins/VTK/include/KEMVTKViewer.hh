@@ -286,8 +286,8 @@ namespace KEMField
 
       for (unsigned int k=0;k<fLineSegmentPolyApprox;k++)
       {
-	double theta1 = 2.*M_PI*((double)k)/fLineSegmentPolyApprox;
-	double theta2 = 2.*M_PI*((double)((k+1)%fLineSegmentPolyApprox))/fLineSegmentPolyApprox;
+	double theta1 = 2.*KEMConstants::Pi*((double)k)/fLineSegmentPolyApprox;
+	double theta2 = 2.*KEMConstants::Pi*((double)((k+1)%fLineSegmentPolyApprox))/fLineSegmentPolyApprox;
 
 	for (unsigned int m=0;m<3;m++)
 	{
@@ -342,8 +342,8 @@ namespace KEMField
 
       for (unsigned int k=0;k<fArcPolyApprox;k++)
       {
-        theta[0] = 2.*M_PI*((double)(k)/(double)(fArcPolyApprox));
-        theta[1] = 2.*M_PI*((double)(k+1)/(double)(fArcPolyApprox));
+        theta[0] = 2.*KEMConstants::Pi*((double)(k)/(double)(fArcPolyApprox));
+        theta[1] = 2.*KEMConstants::Pi*((double)(k+1)/(double)(fArcPolyApprox));
 
         // m index is axial
         for (unsigned int m=0;m<2;m++)
@@ -457,8 +457,8 @@ namespace KEMField
 
     for (unsigned int k=0;k<fLineSegmentPolyApprox;k++)
     {
-      double theta1 = 2.*M_PI*((double)k)/fLineSegmentPolyApprox;
-      double theta2 = 2.*M_PI*((double)((k+1)%fLineSegmentPolyApprox))/fLineSegmentPolyApprox;
+      double theta1 = 2.*KEMConstants::Pi*((double)k)/fLineSegmentPolyApprox;
+      double theta2 = 2.*KEMConstants::Pi*((double)((k+1)%fLineSegmentPolyApprox))/fLineSegmentPolyApprox;
 
       for (unsigned int m=0;m<3;m++)
       {
@@ -511,8 +511,8 @@ namespace KEMField
 
     for (unsigned int k=0;k<fArcPolyApprox;k++)
     {
-      theta[0] = 2.*M_PI*((double)(k)/(double)(fArcPolyApprox));
-      theta[1] = 2.*M_PI*((double)(k+1)/(double)(fArcPolyApprox));
+      theta[0] = 2.*KEMConstants::Pi*((double)(k)/(double)(fArcPolyApprox));
+      theta[1] = 2.*KEMConstants::Pi*((double)(k+1)/(double)(fArcPolyApprox));
 
       // m index is axial
       for (unsigned int m=0;m<2;m++)

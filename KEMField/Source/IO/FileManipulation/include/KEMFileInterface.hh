@@ -8,6 +8,7 @@
 #include "KSAInputNode.hh"
 #include "KSAOutputNode.hh"
 
+#include "KEMFileManipulationExport.hh"
 
 using std::string;
 using std::vector;
@@ -69,11 +70,11 @@ namespace KEMField
     KEMFileInterface();
     virtual ~KEMFileInterface() {}
 
-    static KEMFileInterface* fEMFileInterface;
+    static KEMFILEMANIPULATION_EXPORT KEMFileInterface* fEMFileInterface;
 
     string fActiveDirectory;
 
-    static bool fNullResult;
+    static KEMFILEMANIPULATION_EXPORT bool fNullResult;
   };
 
   template <class Readable>

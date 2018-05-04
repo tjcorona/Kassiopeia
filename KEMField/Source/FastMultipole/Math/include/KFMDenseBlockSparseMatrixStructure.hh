@@ -6,6 +6,8 @@
 
 #include "KSAStructuredASCIIHeaders.hh"
 
+#include "KFMMathExport.hh"
+
 namespace KEMField
 {
 
@@ -82,17 +84,17 @@ class KFMDenseBlockSparseMatrixStructure: public KSAInputOutputObject
         virtual void DefineOutputNode(KSAOutputNode* node) const;
         virtual void DefineInputNode(KSAInputNode* node);
 
-        static const std::string StructureFilePrefix;
-        static const std::string StructureFilePostfix;
+        static KFMMATH_EXPORT const std::string StructureFilePrefix;
+        static KFMMATH_EXPORT const std::string StructureFilePostfix;
 
-        static const std::string RowFilePrefix;
-        static const std::string RowFilePostfix;
+        static KFMMATH_EXPORT const std::string RowFilePrefix;
+        static KFMMATH_EXPORT const std::string RowFilePostfix;
 
-        static const std::string ColumnFilePrefix;
-        static const std::string ColumnFilePostfix;
+        static KFMMATH_EXPORT const std::string ColumnFilePrefix;
+        static KFMMATH_EXPORT const std::string ColumnFilePostfix;
 
-        static const std::string ElementFilePrefix;
-        static const std::string ElementFilePostfix;
+        static KFMMATH_EXPORT const std::string ElementFilePrefix;
+        static KFMMATH_EXPORT const std::string ElementFilePostfix;
 
         //assignment
         KFMDenseBlockSparseMatrixStructure& operator=(const KFMDenseBlockSparseMatrixStructure& rhs)

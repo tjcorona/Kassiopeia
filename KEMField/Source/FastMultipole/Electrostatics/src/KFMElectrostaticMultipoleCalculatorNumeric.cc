@@ -1,5 +1,7 @@
 #include "KFMElectrostaticMultipoleCalculatorNumeric.hh"
 
+#include <cassert>
+
 namespace KEMField
 {
 
@@ -9,8 +11,9 @@ KFMElectrostaticMultipoleCalculatorNumeric::KFMElectrostaticMultipoleCalculatorN
     fNumInt1D = new KVMPathIntegral<2>();
     fNumInt2D = new KVMSurfaceIntegral<2>();
 
-    fSolidHarmonicWrapper = new KVMFieldWrapper< KFMElectrostaticMultipoleCalculatorNumeric,
-                                                &KFMElectrostaticMultipoleCalculatorNumeric::RegularSolidHarmonic>(this, 3, 2);
+assert(0);
+//    fSolidHarmonicWrapper = new KVMFieldWrapper< KFMElectrostaticMultipoleCalculatorNumeric,
+//                                                &KFMElectrostaticMultipoleCalculatorNumeric::RegularSolidHarmonic>(this, 3, 2);
 
     fLine = new KVMLineSegment();
     fTriangle = new KVMTriangularSurface();

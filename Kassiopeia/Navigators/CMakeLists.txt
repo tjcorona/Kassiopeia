@@ -55,7 +55,7 @@ endforeach( BASENAME )
 # library
 kasper_internal_include_directories( ${NAVIGATORS_HEADER_PATH} )
 add_library( KassiopeiaNavigators SHARED ${NAVIGATORS_SOURCE_FILENAMES} )
-set_target_properties( KassiopeiaNavigators PROPERTIES COMPILE_FLAGS -Wno-overloaded-virtual )
+#set_target_properties( KassiopeiaNavigators PROPERTIES COMPILE_FLAGS -Wno-overloaded-virtual )
 target_link_libraries( KassiopeiaNavigators
     ${Kommon_LIBRARIES}
     ${KGeoBag_LIBRARIES}

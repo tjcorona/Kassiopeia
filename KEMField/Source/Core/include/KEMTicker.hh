@@ -1,8 +1,6 @@
 #ifndef KEMTICKER_DEF
 #define KEMTICKER_DEF
 
-#include "KEMCout.hh"
-
 namespace KEMField
 {
   class KTicker

@@ -27,7 +27,7 @@ endforeach( BASENAME )
 # library
 kasper_internal_include_directories( ${EXCEPTIONS_HEADER_PATH} )
 add_library( KEMFieldExceptions SHARED ${EXCEPTIONS_SOURCE_FILENAMES} )
-set_target_properties( KEMFieldExceptions PROPERTIES COMPILE_FLAGS -Wno-overloaded-virtual )
+#set_target_properties( KEMFieldExceptions PROPERTIES COMPILE_FLAGS -Wno-overloaded-virtual )
 #target_link_libraries( KEMFieldExceptions
 #    ${KEMField_LIBRARIES}
 #)

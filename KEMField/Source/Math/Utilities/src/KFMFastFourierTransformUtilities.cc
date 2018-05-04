@@ -1,6 +1,8 @@
 #include "KFMFastFourierTransformUtilities.hh"
 #include "KFMMessaging.hh"
 
+#include "KEMConstants.hh"
+
 #include <cmath>
 
 #define SQRT_THREE_OVER_TWO 0.866025403784438646763723170753
@@ -20,7 +22,7 @@ KFMFastFourierTransformUtilities::ComputeTwiddleFactors(unsigned int N, std::com
     for(unsigned int i=0; i<N; i++)
     {
         di = i;
-        twiddle[i] = std::complex<double>(std::cos((2.0*M_PI*di)/dN), std::sin((2.0*M_PI*di)/dN));
+        twiddle[i] = std::complex<double>(std::cos((2.0*KEMConstants::Pi*di)/dN), std::sin((2.0*KEMConstants::Pi*di)/dN));
     }
 
 //    //This method is from:
@@ -29,7 +31,7 @@ KFMFastFourierTransformUtilities::ComputeTwiddleFactors(unsigned int N, std::com
 //    //IEEE Transactions on Audio and Electroacoustics Vol. Au-17 No. 2 June 1969
 
 //    //intial values needed for recursion
-//    double theta = 2.0*M_PI/((double)N);
+//    double theta = 2.0*KEMConstants::Pi/((double)N);
 //    double sin_theta = std::sin(theta);
 //    double sin_theta_over_two = std::sin(theta/2.0);
 //    double eta_real = -2.0*sin_theta_over_two*sin_theta_over_two;
@@ -74,7 +76,7 @@ KFMFastFourierTransformUtilities::ComputeConjugateTwiddleFactors(unsigned int N,
     //IEEE Transactions on Audio and Electroacoustics Vol. Au-17 No. 2 June 1969
 
     //intial values needed for recursion
-    double theta = 2.0*M_PI/((double)N);
+    double theta = 2.0*KEMConstants::Pi/((double)N);
     double sin_theta = std::sin(theta);
     double sin_theta_over_two = std::sin(theta/2.0);
     double eta_real = -2.0*sin_theta_over_two*sin_theta_over_two;
@@ -372,7 +374,7 @@ void
 KFMFastFourierTransformUtilities::ComputeBluesteinScaleFactors(unsigned int N, std::complex<double>* scale)
 {
     //STEP A
-    double theta = M_PI/((double)N);
+    double theta = KEMConstants::Pi/((double)N);
     unsigned int i2;
     double x;
 

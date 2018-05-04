@@ -51,7 +51,7 @@ endforeach( BASENAME )
 # library
 kasper_internal_include_directories( ${GEOMETRY_HEADER_PATH} )
 add_library( KassiopeiaGeometry SHARED ${GEOMETRY_SOURCE_FILENAMES} )
-set_target_properties( KassiopeiaGeometry PROPERTIES COMPILE_FLAGS -Wno-overloaded-virtual )
+#set_target_properties( KassiopeiaGeometry PROPERTIES COMPILE_FLAGS -Wno-overloaded-virtual )
 target_link_libraries( KassiopeiaGeometry
     ${Kommon_LIBRARIES}
     ${KGeoBag_LIBRARIES}

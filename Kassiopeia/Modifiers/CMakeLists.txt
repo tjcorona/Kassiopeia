@@ -39,7 +39,7 @@ endforeach( BASENAME )
 # library
 kasper_internal_include_directories( ${MODIFIERS_HEADER_PATH} )
 add_library( KassiopeiaModifiers SHARED ${MODIFIERS_SOURCE_FILENAMES} )
-set_target_properties( KassiopeiaModifiers PROPERTIES COMPILE_FLAGS -Wno-overloaded-virtual )
+#set_target_properties( KassiopeiaModifiers PROPERTIES COMPILE_FLAGS -Wno-overloaded-virtual )
 target_link_libraries( KassiopeiaModifiers
     ${Kommon_LIBRARIES}
     ${KGeoBag_LIBRARIES}

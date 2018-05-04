@@ -1,9 +1,10 @@
 #ifndef KEMTHREEVECTOR_H_
 #define KEMTHREEVECTOR_H_
 
-#include <cmath>
 #include <string>
 #include <iostream>
+
+#include "KEMConstants.hh"
 
 namespace KEMField
 {
@@ -237,7 +238,7 @@ namespace KEMField
     }
     else
     {
-      return 2. * M_PI - acos( fData[ 0 ] / Radius );
+      return 2. * KEMConstants::Pi - acos( fData[ 0 ] / Radius );
     }
   }
 

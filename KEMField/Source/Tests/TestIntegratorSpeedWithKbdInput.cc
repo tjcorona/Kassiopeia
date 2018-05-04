@@ -148,7 +148,7 @@ int main(int argc, char* argv[])
         IJKLRANDOM = i+1;
 
         const double z = randomnumber();
-        const double phi = 2.*M_PI*randomnumber();
+        const double phi = 2.*KEMConstants::Pi*randomnumber();
         const double r = cylR * sqrt(randomnumber());
 
         fieldPoints[(i*3)] = cos(phi) * r; // x

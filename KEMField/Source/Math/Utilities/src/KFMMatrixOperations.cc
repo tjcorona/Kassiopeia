@@ -4,6 +4,8 @@
 
 #include "KFMMessaging.hh"
 
+#include "KEMConstants.hh"
+
 namespace KEMField
 {
 
@@ -763,7 +765,7 @@ void kfm_matrix_euler_angles(const kfm_matrix* R, double& alpha, double& beta, d
             else if( std::fabs(1. +  kfm_matrix_get(R,2,2) ) <= tol)
             {
                 alpha = std::atan2(  kfm_matrix_get(R,0,1),  kfm_matrix_get(R,1,1) );
-                beta = M_PI;
+                beta = KEMConstants::Pi;
                 gamma = 0;
             }
             else

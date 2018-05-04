@@ -863,7 +863,7 @@ void Field_Analytic(double Q,double radius1,double radius2,double radius3,double
 
   if (r<radius1)
   {
-    F[0] = Q/(4.*M_PI)*(-1./(fEps0*permittivity2*radius3) +
+    F[0] = Q/(4.*KEMConstants::Pi)*(-1./(fEps0*permittivity2*radius3) +
 			1./(fEps0*permittivity2*radius2) -
 			1./(fEps0*permittivity1*radius2) +
 			1./(fEps0*permittivity1*radius1));
@@ -871,21 +871,21 @@ void Field_Analytic(double Q,double radius1,double radius2,double radius3,double
   }
   else if (r<radius2)
   {
-    F[0] = Q/(4.*M_PI)*(-1./(fEps0*permittivity2*radius3) +
+    F[0] = Q/(4.*KEMConstants::Pi)*(-1./(fEps0*permittivity2*radius3) +
 			1./(fEps0*permittivity2*radius2) -
 			1./(fEps0*permittivity1*radius2) +
 			1./(fEps0*permittivity1*r));
-    F[1] = Q/(4.*M_PI*fEps0*permittivity1*r*r)*P[0]/r;
-    F[2] = Q/(4.*M_PI*fEps0*permittivity1*r*r)*P[1]/r;
-    F[3] = Q/(4.*M_PI*fEps0*permittivity1*r*r)*P[2]/r;
+    F[1] = Q/(4.*KEMConstants::Pi*fEps0*permittivity1*r*r)*P[0]/r;
+    F[2] = Q/(4.*KEMConstants::Pi*fEps0*permittivity1*r*r)*P[1]/r;
+    F[3] = Q/(4.*KEMConstants::Pi*fEps0*permittivity1*r*r)*P[2]/r;
   }
   else if (r<radius3)
   {
-    F[0] = Q/(4.*M_PI)*(-1./(fEps0*permittivity2*radius3) +
+    F[0] = Q/(4.*KEMConstants::Pi)*(-1./(fEps0*permittivity2*radius3) +
 			1./(fEps0*permittivity2*r));
-    F[1] = Q/(4.*M_PI*fEps0*permittivity2*r*r)*P[0]/r;
-    F[2] = Q/(4.*M_PI*fEps0*permittivity2*r*r)*P[1]/r;
-    F[3] = Q/(4.*M_PI*fEps0*permittivity2*r*r)*P[2]/r;
+    F[1] = Q/(4.*KEMConstants::Pi*fEps0*permittivity2*r*r)*P[0]/r;
+    F[2] = Q/(4.*KEMConstants::Pi*fEps0*permittivity2*r*r)*P[1]/r;
+    F[3] = Q/(4.*KEMConstants::Pi*fEps0*permittivity2*r*r)*P[2]/r;
   }
   else
   {

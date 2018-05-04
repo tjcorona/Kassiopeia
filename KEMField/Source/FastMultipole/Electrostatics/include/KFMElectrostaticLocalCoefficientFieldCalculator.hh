@@ -7,6 +7,8 @@
 #include "KFMPinchonJMatrixCalculator.hh"
 #include "KFMComplexSphericalHarmonicExpansionRotator.hh"
 
+#include "KFMElectrostaticsExport.hh"
+
 namespace KEMField
 {
 
@@ -95,7 +97,7 @@ class KFMElectrostaticLocalCoefficientFieldCalculator
         mutable double* fImagMomentsB;
 
     public:
-        static const double fRootThreeOverTwo;
+        static KFMELECTROSTATICS_EXPORT const double fRootThreeOverTwo;
 
 };
 

@@ -71,7 +71,7 @@ endforeach( BASENAME )
 # library
 kasper_internal_include_directories( ${WRITERS_HEADER_PATH} )
 add_library( KassiopeiaWriters SHARED ${WRITERS_SOURCE_FILENAMES} )
-set_target_properties( KassiopeiaWriters PROPERTIES COMPILE_FLAGS -Wno-overloaded-virtual )
+#set_target_properties( KassiopeiaWriters PROPERTIES COMPILE_FLAGS -Wno-overloaded-virtual )
 target_link_libraries( KassiopeiaWriters
     ${Kommon_LIBRARIES}
     ${KGeoBag_LIBRARIES}

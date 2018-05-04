@@ -4,9 +4,9 @@
 #include <typeinfo>
 
 // this fixes compile-time errors on GCC when using the C++11 standard
-#ifdef __GXX_EXPERIMENTAL_CXX0X__
+//#ifdef __GXX_EXPERIMENTAL_CXX0X__
 #define __typeof__(x) decltype(x)
-#endif
+//#endif
 
 namespace KEMField
 {

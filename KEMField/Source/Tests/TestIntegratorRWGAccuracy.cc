@@ -410,7 +410,7 @@ int main()
 
         // check z and compute omega, if z=0 omega = 2.Pi
         // WTF this is never used
-        /*double omega = 2.*M_PI;
+        /*double omega = 2.*KEMConstants::Pi;
         if( dirN3>1.E-14 ) {
             omega = 0.; // compute
         }*/

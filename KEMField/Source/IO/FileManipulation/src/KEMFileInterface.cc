@@ -1,8 +1,14 @@
 #include "KEMFileInterface.hh"
 
+#ifdef _WIN32
+#include <direct.h>
+//#elif defined __linux__
+#else
 #include <sys/stat.h>
 #include <dirent.h>
 #include <unistd.h>
+#endif
+  
 #include <cstdio>
 
 #include "KSAStructuredASCIIHeaders.hh"
@@ -74,6 +80,7 @@ namespace KEMField
 
   set<string> KEMFileInterface::FileList(string directory) const
   {
+/*
     if (directory == "")
       directory = fActiveDirectory;
 
@@ -95,10 +102,13 @@ namespace KEMField
       closedir(dir);
     }
     return fileList;
+*/
+    return set<string>();
   }
 
     set<string> KEMFileInterface::CompleteFileList(string directory) const
     {
+/*
         if (directory == "")
         directory = fActiveDirectory;
 
@@ -118,6 +128,8 @@ namespace KEMField
             closedir(dir);
         }
         return fileList;
+*/
+    return set<string>();
     }
 
   void KEMFileInterface::ActiveDirectory(string directory)
@@ -132,23 +144,31 @@ namespace KEMField
 
   bool KEMFileInterface::DirectoryExists(string directory)
   {
+/*
     DIR *dir;
     if ((dir = opendir (directory.c_str())) != NULL)
     {
       closedir(dir);
       return true;
     }
+*/
     return false;
   }
 
   bool KEMFileInterface::CreateDirectory(string directory)
   {
+/*
     return mkdir(directory.c_str(),S_IRWXU);
+*/
+    return false;
   }
 
   bool KEMFileInterface::RemoveDirectory(string directory)
   {
+/*
     return rmdir(directory.c_str());
+*/
+    return false;
   }
 
   bool KEMFileInterface::RemoveFileFromActiveDirectory(string file_name)
@@ -159,12 +179,14 @@ namespace KEMField
 
     bool KEMFileInterface::DoesFileExist(std::string file_name)
     {
+      /*
         std::string full_file_name = KEMFileInterface::GetInstance()->ActiveDirectory() + "/" + file_name;
         std::set< std::string > file_list = KEMFileInterface::GetInstance()->CompleteFileList();
         for(std::set<std::string>::iterator it=file_list.begin(); it!=file_list.end(); ++it)
         {
             if(full_file_name == *it){return true;};
         }
+*/
         return false;
     }
 

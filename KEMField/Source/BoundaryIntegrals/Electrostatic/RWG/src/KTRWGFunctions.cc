@@ -363,7 +363,7 @@ std::vector<std::complex <double> > KTRWGFunctions::CalcGreenFunction(const doub
 	std::complex <double> coefficient (0.,0.);
 	std::complex <double> im (0.,1.);
 
-	double kConstant = 1./(4. * M_PI);
+	double kConstant = 1./(4. * KEMConstants::Pi);
 	double kPhase = k * fDeltaR.Mag();
 	double diff = 0.;
 	std::complex <double> fPrecisionTrack  (0.,0.);

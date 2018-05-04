@@ -2,6 +2,7 @@
 # Author: J. P. Barrett
 
 kasper_internal_include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
+kasper_internal_include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 set (KFMELECTROSTATICS_HEADERFILES
     ${CMAKE_CURRENT_SOURCE_DIR}/include/KFMElectrostaticElement.hh
@@ -56,6 +57,9 @@ set (KFMELECTROSTATICS_SOURCEFILES
 ##################################################
 
 add_library (KFMElectrostatics SHARED ${KFMELECTROSTATICS_SOURCEFILES})
+include(GenerateExportHeader)
+generate_export_header(KFMElectrostatics EXPORT_FILE_NAME KFMElectrostaticsExport.hh)
+kasper_install_headers(${CMAKE_CURRENT_BINARY_DIR}/KFMElectrostaticsExport.hh)
 target_link_libraries (KFMElectrostatics KEMCore KFMCore KFMMath KFMMathUtilities KVectorMath KFMKernel KFMTree KEMFileManipulation)
 
 kasper_install_headers (${KFMELECTROSTATICS_HEADERFILES})

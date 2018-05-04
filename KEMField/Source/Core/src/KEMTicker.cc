@@ -1,5 +1,7 @@
 #include "KEMTicker.hh"
 
+#include "KEMCout.hh"
+
 #include <cmath>
 
 namespace KEMField

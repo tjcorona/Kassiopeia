@@ -477,7 +477,7 @@ int main(int argc, char** argv)
           i++;
         }
         std::cout<<""<<std::endl;
-        double C = Q/(4.*M_PI*KEMConstants::Eps0);
+        double C = Q/(4.*KEMConstants::Pi*KEMConstants::Eps0);
         double C_Read = 0.6606785;
         double C_Read_err = 0.0000006;
         MPI_SINGLE_PROCESS
@@ -502,7 +502,7 @@ int main(int argc, char** argv)
           i++;
         }
         std::cout<<""<<std::endl;
-        double C = Q/(4.*M_PI*KEMConstants::Eps0);
+        double C = Q/(4.*KEMConstants::Pi*KEMConstants::Eps0);
         double C_Read = -1.0;
         double C_Read_err = 0.000000;
         MPI_SINGLE_PROCESS

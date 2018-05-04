@@ -66,7 +66,7 @@ endforeach( BASENAME )
 # library
 kasper_internal_include_directories( ${READERS_HEADER_PATH} )
 add_library( KassiopeiaReaders SHARED ${READERS_SOURCE_FILENAMES} )
-set_target_properties( KassiopeiaReaders PROPERTIES COMPILE_FLAGS -Wno-overloaded-virtual )
+#set_target_properties( KassiopeiaReaders PROPERTIES COMPILE_FLAGS -Wno-overloaded-virtual )
 target_link_libraries( KassiopeiaReaders
     ${Kommon_LIBRARIES}
     ${KGeoBag_LIBRARIES}

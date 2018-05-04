@@ -10,6 +10,7 @@ mark_as_advanced(FORCE KEMField_CACHE_DIR)
 
 
 kasper_internal_include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
+kasper_internal_include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 set (FILEMANIPULATION_HEADERFILES
   ${CMAKE_CURRENT_SOURCE_DIR}/include/KEMFile.hh
@@ -33,6 +34,9 @@ set_property(
 )
 
 add_library (KEMFileManipulation SHARED ${FILEMANIPULATION_SOURCEFILES} ${FILEMANIPULATION_DICT_OUTFILE})
+include(GenerateExportHeader)
+generate_export_header(KEMFileManipulation EXPORT_FILE_NAME KEMFileManipulationExport.hh)
+kasper_install_headers(${CMAKE_CURRENT_BINARY_DIR}/KEMFileManipulationExport.hh)
 target_link_libraries (KEMFileManipulation KEMIO KEMStructuredASCII KEMCore ${GSL_LIBRARIES} ${OPENCL_LIBRARIES})
 
 kasper_install_headers (${FILEMANIPULATION_HEADERFILES})

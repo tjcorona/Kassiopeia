@@ -29,7 +29,7 @@ fDegree(-1)
     fRealMoments = NULL;
     fImagMoments = NULL;
 
-    fKFactor = ( 1.0/(4.0*M_PI*KEMConstants::Eps0) );
+    fKFactor = ( 1.0/(4.0*KEMConstants::Pi*KEMConstants::Eps0) );
 
     fSphField = kfm_vector_alloc(3);
     fCartField = kfm_vector_alloc(3);
@@ -450,7 +450,7 @@ KFMElectrostaticLocalCoefficientFieldCalculator::ElectricFieldNearZPole(const do
 
     //set the rotation angles and rotate the moments
     //here we choose to rotate about the y-axis
-    double rot_angle = M_PI/4.0;
+    double rot_angle = KEMConstants::Pi/4.0;
     fRotator->SetEulerAngles(0.0, rot_angle, 0.0);
     fRotator->SetMoments(&fMomentsA);
     fRotator->Rotate();

@@ -101,7 +101,8 @@ class KEMSparseMatrixFileInterface
 
             pFile = fopen(ss.str().c_str(), "rb");
 
-            size_t __attribute__((__unused__)) unused = fread(matrix_elements, sizeof(double), fBufferSize, pFile);
+//            size_t __attribute__((__unused__)) unused = fread(matrix_elements, sizeof(double), fBufferSize, pFile);
+            fread(matrix_elements, sizeof(double), fBufferSize, pFile);
             fclose(pFile);
         }
 

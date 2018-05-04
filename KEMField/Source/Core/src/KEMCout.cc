@@ -1,14 +1,18 @@
-#include "KEMCout.hh"
+//#include "KEMCout.hh"
+
+#include "KDataDisplay.hh"
+
+#include <iostream>
 
 namespace KEMField
 {
 #ifdef KEMFIELD_SILENT
-  KDataDisplay<KNullStream> cout;
+  __declspec(dllexport) KDataDisplay<KNullStream> cout;
 #else
 #ifdef KEMFIELD_USE_KMESSAGE
-  KDataDisplay<KMessage_KEMField> cout;
+  __declspec(dllexport) KDataDisplay<KMessage_KEMField> cout;
 #else
-  KDataDisplay<std::ostream> cout;
+  __declspec(dllexport) KDataDisplay<std::ostream> cout;
 #endif
 #endif
 }
@@ -24,5 +28,6 @@ namespace
     return true;
   }
 
-  bool __attribute__((__unused__)) fEnableDebugOutput = EnableDebugOutput();
+//  bool __attribute__((__unused__)) fEnableDebugOutput = EnableDebugOutput();
+  bool fEnableDebugOutput = EnableDebugOutput();
 }

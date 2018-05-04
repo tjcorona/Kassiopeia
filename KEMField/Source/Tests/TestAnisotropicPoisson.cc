@@ -349,7 +349,7 @@ int main(int argc, char** argv)
       unsigned int index = idx*N_z + jdx;
       double x_ = (idx + .5)/double(N_x);
       double z_ = (jdx + .5)/double(N_z);
-      xSolved[index] = sin(M_PI*j*x_)*sin(M_PI*k*z_);
+      xSolved[index] = sin(KEMConstants::Pi*j*x_)*sin(KEMConstants::Pi*k*z_);
     }
 
   std::cout<<"|xSolved| = "<<xSolved.InfinityNorm()<<std::endl;
@@ -361,7 +361,7 @@ int main(int argc, char** argv)
 
   std::cout<<"|b| = "<<b.InfinityNorm()<<std::endl;
 
-  double lambda = -((j*M_PI/length)*(j*M_PI/length) + (k*M_PI/height)*(k*M_PI/height));
+  double lambda = -((j*KEMConstants::Pi/length)*(j*KEMConstants::Pi/length) + (k*KEMConstants::Pi/height)*(k*KEMConstants::Pi/height));
 
   std::cout<<"lambda = "<<lambda<<std::endl;
 

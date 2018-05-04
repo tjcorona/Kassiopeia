@@ -43,7 +43,7 @@ endforeach( BASENAME )
 # library
 kasper_internal_include_directories( ${FIELDS_ELECTRIC_HEADER_PATH} )
 add_library( KEMFieldsElectric SHARED ${FIELDS_ELECTRIC_SOURCE_FILENAMES} )
-set_target_properties( KEMFieldsElectric PROPERTIES COMPILE_FLAGS -Wno-overloaded-virtual )
+#set_target_properties( KEMFieldsElectric PROPERTIES COMPILE_FLAGS -Wno-overloaded-virtual )
 target_link_libraries( KEMFieldsElectric
     KEMFieldChargeDensitySolvers
     KEMFieldsMagnetic

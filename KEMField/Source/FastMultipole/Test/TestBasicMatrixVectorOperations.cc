@@ -36,9 +36,9 @@ int main(int /*argc*/, char** /*argv*/)
     //
     //
     // //generate three angles
-    // double alpha = M_PI/2.2313;
-    // double beta = M_PI/4.934857;
-    // double gamma = M_PI/3.9487;
+    // double alpha = KEMConstants::Pi/2.2313;
+    // double beta = KEMConstants::Pi/4.934857;
+    // double gamma = KEMConstants::Pi/3.9487;
 
 
 

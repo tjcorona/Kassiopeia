@@ -10,12 +10,12 @@
 namespace KEMField
 {
 #ifdef KEMFIELD_SILENT
-  extern KDataDisplay<KNullStream> cout;
+  __declspec(dllimport) KDataDisplay<KNullStream> cout;
 #else
 #ifdef KEMFIELD_USE_KMESSAGE
-  extern KDataDisplay<KMessage_KEMField> cout;
+  __declspec(dllimport) KDataDisplay<KMessage_KEMField> cout;
 #else
-  extern KDataDisplay<std::ostream> cout;
+  __declspec(dllimport) KDataDisplay<std::ostream> cout;
 #endif
 #endif
 }

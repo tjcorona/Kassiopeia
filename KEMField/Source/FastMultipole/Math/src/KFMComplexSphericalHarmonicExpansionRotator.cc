@@ -1,6 +1,7 @@
 #include "KFMComplexSphericalHarmonicExpansionRotator.hh"
 
 //#include "KIOManager.hh"
+#include "KEMConstants.hh"
 
 namespace KEMField{
 
@@ -40,10 +41,10 @@ KFMComplexSphericalHarmonicExpansionRotator::SetDegree(int l_max)
     for(int l = 0; l <= fDegree; l++)
     {
         si_l = l*(l+1);
-        fNormalizationCoefficients[si_l] = std::sqrt((2.*l + 1.)/(4.*M_PI));
+        fNormalizationCoefficients[si_l] = std::sqrt((2.*l + 1.)/(4.*KEMConstants::Pi));
         fInverseNormalizationCoefficients[si_l] = 1.0/fNormalizationCoefficients[si_l];
 
-        fac = std::sqrt((2.*l + 1.)/(2.*M_PI));
+        fac = std::sqrt((2.*l + 1.)/(2.*KEMConstants::Pi));
         for(int m = 1; m <= l; m++)
         {
             si_pos = si_l + m;

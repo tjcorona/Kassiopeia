@@ -1,11 +1,13 @@
 #include "KEllipticIntegrals.hh"
 
-#include <cmath>
+#include "KEMConstants.hh"
 
 #ifdef KEMFIELD_USE_GSL
 #include "gsl/gsl_sf_ellint.h"
 #include "gsl/gsl_machine.h"
 #endif
+
+#include <cmath>
 
 namespace KEMField
 {
@@ -96,7 +98,7 @@ namespace KEMField
       EK=(E(k)-K(k))/k2;
     else
     {
-      a=M_PI/2.;
+      a=KEMConstants::Pi/2.;
       k2n=1.;
       EK=0.;
       for(n=1;n<=900;n++)

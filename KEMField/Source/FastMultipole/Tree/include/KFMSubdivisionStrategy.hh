@@ -1,14 +1,16 @@
 #ifndef KFMSubdivisionStrategy_HH__
 #define KFMSubdivisionStrategy_HH__
 
+#include "KFMTreeExport.hh"
+
 namespace KEMField
 {
 
 struct KFMSubdivisionStrategy
 {
-    static const unsigned int Aggressive;
-    static const unsigned int Balanced;
-    static const unsigned int Guided;
+    static KFMTREE_EXPORT const unsigned int Aggressive;
+    static KFMTREE_EXPORT const unsigned int Balanced;
+    static KFMTREE_EXPORT const unsigned int Guided;
 };
 
 }

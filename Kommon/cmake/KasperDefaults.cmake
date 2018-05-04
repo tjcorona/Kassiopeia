@@ -24,10 +24,6 @@ if( ${CMAKE_SOURCE_DIR} STREQUAL ${PROJECT_SOURCE_DIR} )
             set(CMAKE_BUILD_TYPE "" CACHE STRING "Choose build type (None | Debug | Release | RelWithDebInfo | MinSizeRel)" FORCE)
         endif()
 
-        # set compiler warning levels
-        set(_wflags_debug "-Wall -Wextra")
-        set(_wflags_release "-Wall -Werror")
-
         string(STRIP "${CMAKE_CXX_FLAGS} ${_wflags_debug}" _cxx_flags)
         string(STRIP "${CMAKE_C_FLAGS} ${_wflags_debug}" _c_flags)
 

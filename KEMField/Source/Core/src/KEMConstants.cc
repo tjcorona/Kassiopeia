@@ -1,5 +1,6 @@
 #include "KEMConstants.hh"
 
+#define _USE_MATH_DEFINES
 #include <cmath>
 
 #ifdef KEMFIELD_USE_KOMMON
@@ -21,9 +22,9 @@ namespace KEMField
 namespace KEMField
 {
   const double KEMConstants::Pi = M_PI;
-  const double KEMConstants::PiOverTwo = M_PI/2.;
+  const double KEMConstants::PiOverTwo = KEMConstants::Pi/2.;
   const double KEMConstants::Eps0 = 8.854187817E-12;
-  const double KEMConstants::OneOverFourPiEps0 = 1./(4.*M_PI*KEMConstants::Eps0);
+  const double KEMConstants::OneOverFourPiEps0 = 1./(4.*KEMConstants::Pi*KEMConstants::Eps0);
   const double KEMConstants::Mu0 = 1.25663706e-06;
   const double KEMConstants::Mu0OverPi = 4.*1.e-7;
 }

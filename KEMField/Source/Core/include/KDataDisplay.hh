@@ -25,8 +25,6 @@ namespace KEMField
  * @author T.J. Corona
  */
 
-  extern const std::string FundamentalTypeNames[14];
-
   template <class Stream>
   class KDataDisplay;
 
@@ -59,8 +57,8 @@ namespace KEMField
       	for (int i=0;i<d.Level();i++)
       	  d.GetStream() << d.Separator();
       	d.GetStream() << "<" << d.AssignmentCounter(d.Level()-1) << ">("
-		      <<FundamentalTypeNames[IndexOf<FundamentalTypes,
-						     Type>::value] <<")" 
+		      <<FundamentalTypeName(IndexOf<FundamentalTypes,
+						     Type>::value) <<")" 
 		      << x
 		      << "<\\" << d.AssignmentCounter(d.Level()-1) << ">\n";
       	d.IncrementAssignmentCounter(d.Level()-1);

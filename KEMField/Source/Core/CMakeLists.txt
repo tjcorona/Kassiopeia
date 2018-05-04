@@ -73,6 +73,7 @@ if (@PROJECT_NAME@_USE_REALTIME_CLOCK)
 endif (@PROJECT_NAME@_USE_REALTIME_CLOCK)
 
 kasper_internal_include_directories (${CMAKE_CURRENT_SOURCE_DIR}/include)
+kasper_internal_include_directories (${CMAKE_CURRENT_BINARY_DIR})
 
 set (KEMCORE_HEADERFILES
   ${CMAKE_CURRENT_SOURCE_DIR}/include/KComplexStreamer.hh
@@ -89,6 +90,7 @@ set (KEMCORE_HEADERFILES
   ${CMAKE_CURRENT_SOURCE_DIR}/include/KTimer.hh
   ${CMAKE_CURRENT_SOURCE_DIR}/include/KTypelist.hh
   ${CMAKE_CURRENT_SOURCE_DIR}/include/KTypelistVisitor.hh
+  ${CMAKE_CURRENT_BUILD_DIR}/kemcore_export.h
   )
 
 set (KEMCORE_SOURCEFILES
@@ -109,17 +111,20 @@ if (@PROJECT_NAME@_USE_MPI)
     )
 endif (@PROJECT_NAME@_USE_MPI)
 
-if (@PROJECT_NAME@_USE_KMESSAGE)
-  list (APPEND KEMCORE_HEADERFILES
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/KMessageInterface.hh
-    )
-  list (APPEND KEMCORE_SOURCEFILES
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/KMessageInterface.cc
-    )
-
-endif (@PROJECT_NAME@_USE_KMESSAGE)
+#if (@PROJECT_NAME@_USE_KMESSAGE)
+#  list (APPEND KEMCORE_HEADERFILES
+#    ${CMAKE_CURRENT_SOURCE_DIR}/include/KMessageInterface.hh
+#    )
+#  list (APPEND KEMCORE_SOURCEFILES
+#    ${CMAKE_CURRENT_SOURCE_DIR}/src/KMessageInterface.cc
+#    )
+#
+#endif (@PROJECT_NAME@_USE_KMESSAGE)
 
 add_library (KEMCore SHARED ${KEMCORE_SOURCEFILES})
+include(GenerateExportHeader)
+generate_export_header(KEMCore EXPORT_FILE_NAME KEMCoreExport.hh)
+kasper_install_headers(${CMAKE_CURRENT_BINARY_DIR}/KEMCoreExport.hh)
 target_link_libraries (KEMCore ${Kommon_LIBRARIES})
 
 add_executable( KSmartPointer_test test/KSmartPointer_test.cc )

@@ -10,7 +10,7 @@ if (@PROJECT_NAME@_ENABLE_FM_APP)
 
     kasper_internal_include_directories(${@PROJECT_NAME@_INCLUDE_DIRS})
 
-	add_definitions( -Wno-overloaded-virtual )
+#	add_definitions( -Wno-overloaded-virtual )
 
     set (FAST_MULTIPOLE_APP_LIBS
         KFMCore

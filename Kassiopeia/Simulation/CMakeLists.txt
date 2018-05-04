@@ -83,7 +83,7 @@ endforeach( BASENAME )
 # library
 kasper_internal_include_directories( ${SIMULATION_HEADER_PATH} )
 add_library( KassiopeiaSimulation SHARED ${SIMULATION_SOURCE_FILENAMES} )
-set_target_properties( KassiopeiaSimulation PROPERTIES COMPILE_FLAGS -Wno-overloaded-virtual )
+#set_target_properties( KassiopeiaSimulation PROPERTIES COMPILE_FLAGS -Wno-overloaded-virtual )
 target_link_libraries( KassiopeiaSimulation
     ${Kommon_LIBRARIES}
     ${KGeoBag_LIBRARIES}

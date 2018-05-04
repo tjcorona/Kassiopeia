@@ -1,6 +1,7 @@
 #ifndef KMESSAGEINTERFACE_DEF
 #define KMESSAGEINTERFACE_DEF
 
+#if 0
 #include <ostream>
 
 #include "KMessage.h"
@@ -42,5 +43,5 @@ namespace KEMField
   }
 
 }
-
+#endif
 #endif /* KMESSAGEINTERFACE_DEF */

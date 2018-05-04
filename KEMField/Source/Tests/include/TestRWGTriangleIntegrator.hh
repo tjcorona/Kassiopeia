@@ -50,7 +50,7 @@ double SolidAngleTriangle( double* data, const double* P )
 			+ POW2(P[2]-triCenter[2]) );
 
 	if( triMagCenterToP <= M_MINDISTANCE )
-		res = 2.*M_PI;
+		res = 2.*KEMConstants::Pi;
 	else {
 		// unit vectors of distances of corner points to field point in positive rotation order
 

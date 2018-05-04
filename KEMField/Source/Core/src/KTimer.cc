@@ -4,9 +4,8 @@
  *  Created on: 21 Sep 2015
  *      Author: wolfgang
  */
+
 #include "KEMCout.hh"
-
-
 #include "KTimer.hh"
 
 namespace KEMField {

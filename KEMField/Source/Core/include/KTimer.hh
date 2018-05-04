@@ -10,6 +10,8 @@
 
 #include <time.h>
 
+#include <string>
+
 namespace KEMField {
 
 class KTimer {

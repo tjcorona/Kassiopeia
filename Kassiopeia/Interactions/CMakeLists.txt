@@ -185,7 +185,7 @@ endforeach( BASENAME )
 # library
 kasper_internal_include_directories( ${INTERACTIONS_HEADER_PATH} )
 add_library( KassiopeiaInteractions SHARED ${INTERACTIONS_SOURCE_FILENAMES} )
-set_target_properties( KassiopeiaInteractions PROPERTIES COMPILE_FLAGS -Wno-overloaded-virtual )
+#set_target_properties( KassiopeiaInteractions PROPERTIES COMPILE_FLAGS -Wno-overloaded-virtual )
 target_link_libraries( KassiopeiaInteractions
     ${Kommon_LIBRARIES}
     ${KGeoBag_LIBRARIES}

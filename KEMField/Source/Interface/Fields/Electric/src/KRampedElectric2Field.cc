@@ -67,7 +67,7 @@ double KRampedElectric2Field::GetModulationFactor( const double &aTime ) const
     double tHigh = tUp   + fRampUpTime    * fTimeScalingFactor;
     double tDown = tHigh + fRampDownDelay * fTimeScalingFactor;
     double tLow  = tDown + fRampDownTime  * fTimeScalingFactor;
-    double tOmega = 2.*M_PI/tLength;
+    double tOmega = 2.*KEMConstants::Pi/tLength;
 
     double Field = 0.;
     switch( fRampingType )

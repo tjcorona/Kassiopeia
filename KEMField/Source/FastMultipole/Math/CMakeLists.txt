@@ -2,6 +2,7 @@
 # Author: J. P. Barrett
 
 kasper_internal_include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
+kasper_internal_include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 set (MATH_HEADERFILES
     ${CMAKE_CURRENT_SOURCE_DIR}/include/KFMRealSphericalHarmonicExpansionRotator.hh
@@ -34,7 +35,10 @@ set (MATH_SOURCEFILES
 )
 
 add_library (KFMMath SHARED ${MATH_SOURCEFILES})
-    target_link_libraries (KFMMath KFMCore KFMMathUtilities)
+include(GenerateExportHeader)
+generate_export_header(KFMMath EXPORT_FILE_NAME KFMMathExport.hh)
+kasper_install_headers(${CMAKE_CURRENT_BINARY_DIR}/KFMMathExport.hh)
+target_link_libraries (KFMMath KFMCore KFMMathUtilities)
 
 kasper_install_headers (${MATH_HEADERFILES})
 kasper_install_libraries (KFMMath)

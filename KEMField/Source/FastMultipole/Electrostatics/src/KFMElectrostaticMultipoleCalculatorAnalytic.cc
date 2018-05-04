@@ -2,6 +2,9 @@
 
 #include "KFMMessaging.hh"
 
+#include "KEMConstants.hh"
+
+#include <cassert>
 #include <cstdlib>
 
 namespace KEMField{
@@ -412,7 +415,7 @@ KFMElectrostaticMultipoleCalculatorAnalytic::ComputeRectangleMoments(double* tar
     fTriangleBasisCalculator->Convert(&fTriangleA, basisA);
     ComputeTriangleMomentAnalyticTerms(2.0*basisA.area, basisA.h, basisA.phi1, basisA.phi2, &fMomentsA);
     //now add to the contribution from the opposite triangle (rotated by PI around z-axis)
-    fRotator->SetSingleZRotationAngle(M_PI);
+    fRotator->SetSingleZRotationAngle(KEMConstants::Pi);
     fRotator->SetMoments(&fMomentsA);
     fRotator->Rotate();
     fRotator->GetRotatedMoments(&fMomentsC);
@@ -426,7 +429,7 @@ KFMElectrostaticMultipoleCalculatorAnalytic::ComputeRectangleMoments(double* tar
     fTriangleBasisCalculator->Convert(&fTriangleB, basisB);
     ComputeTriangleMomentAnalyticTerms(2.0*basisB.area, basisB.h, basisB.phi1, basisB.phi2, &fMomentsB);
     //now add to the contribution from the opposite triangle (rotated by PI around z-axis)
-    fRotator->SetSingleZRotationAngle(M_PI);
+    fRotator->SetSingleZRotationAngle(KEMConstants::Pi);
     fRotator->SetMoments(&fMomentsB);
     fRotator->Rotate();
     fRotator->GetRotatedMoments(&fMomentsC);
@@ -436,7 +439,7 @@ KFMElectrostaticMultipoleCalculatorAnalytic::ComputeRectangleMoments(double* tar
     }
 
     //now rotate moments B by 90 degrees about z-axis and add to moments A
-    fRotator->SetSingleZRotationAngle(M_PI/2.);
+    fRotator->SetSingleZRotationAngle(KEMConstants::Pi/2.);
     fRotator->SetMoments(&fMomentsB);
     fRotator->Rotate();
     fRotator->GetRotatedMoments(&fMomentsC);
@@ -515,6 +518,8 @@ void
 KFMElectrostaticMultipoleCalculatorAnalytic::TranslateMomentsAlongZ(std::vector< std::complex<double> >& source_moments, std::vector< std::complex<double> >& target_moments) const
 {
     //compute the array of powers of r
+    assert(0);
+/*
     double r_pow[fDegree+1];
     r_pow[0] = 1.0;
     for(int i=1; i <= fDegree; i++)
@@ -558,7 +563,7 @@ KFMElectrostaticMultipoleCalculatorAnalytic::TranslateMomentsAlongZ(std::vector<
     {
         target_moments[i] *= (1.0/fACoefficient[i]);
     }
-
+*/
 }
 
 

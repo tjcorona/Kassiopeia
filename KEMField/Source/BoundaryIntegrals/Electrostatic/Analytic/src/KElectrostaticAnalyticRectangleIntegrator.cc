@@ -41,7 +41,7 @@ double KElectrostaticAnalyticRectangleIntegrator::Potential(const KRectangle* so
 			Integral_ln(xmax,ymin,w) +
 			Integral_ln(xmin,ymin,w));
 
-	return I/(4.*M_PI*KEMConstants::Eps0);
+	return I/(4.*KEMConstants::Pi*KEMConstants::Eps0);
 }
 
 KEMThreeVector KElectrostaticAnalyticRectangleIntegrator::ElectricField(const KRectangle* source,

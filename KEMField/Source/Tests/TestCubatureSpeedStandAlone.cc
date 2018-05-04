@@ -209,7 +209,7 @@ int main()
 
 		costheta=-1.+2.*randomnumber();
 		sintheta=sqrt(1.-costheta*costheta);
-		phi=2.*M_PI*randomnumber();
+		phi=2.*KEMConstants::Pi*randomnumber();
 
 		fP[0]=r*sintheta*cos(phi);
 		fP[1]=r*sintheta*sin(phi);

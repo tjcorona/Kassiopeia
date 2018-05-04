@@ -11,6 +11,8 @@
 #include <sstream>
 #include <sys/stat.h>
 
+#include "KEMConstants.hh"
+
 #include "KElectrostaticBoundaryIntegratorFactory.hh"
 #include "KTypelist.hh"
 #include "KSurfaceTypes.hh"
@@ -234,7 +236,7 @@ int main(int argc, char* argv[])
         IJKLRANDOM = i+1;
 
         double zRnd = randomnumber();
-        double phi = 2.*M_PI*randomnumber();
+        double phi = 2.*KEMConstants::Pi*randomnumber();
         double r = cylR * sqrt(randomnumber());
 
         double x = cos(phi) * r; // x
@@ -335,7 +337,7 @@ int main(int argc, char* argv[])
         IJKLRANDOM = i+1;
 
         double zRnd = randomnumber();
-        double phi = 2.*M_PI*randomnumber();
+        double phi = 2.*KEMConstants::Pi*randomnumber();
         double r = cylOutR;
 
         double x = cos(phi) * r; // x
@@ -426,7 +428,7 @@ int main(int argc, char* argv[])
     for( unsigned int i=0; i<noPoints; i++ ) {
         IJKLRANDOM = i+1;
 
-        double phi = 2.*M_PI*randomnumber();
+        double phi = 2.*KEMConstants::Pi*randomnumber();
         double r = cylR * sqrt(randomnumber());
 
         double x = cos(phi) * r; // x

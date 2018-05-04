@@ -3,6 +3,7 @@
 
 #include "KShape.hh"
 
+#include "KEMConstants.hh"
 #include "KSymmetryGroup.hh"
 
 namespace KEMField
@@ -26,7 +27,7 @@ namespace KEMField
 		   const KPosition& p1,
 		   const double&  diameter);
 
-    double Area() const { return M_PI*fDiameter*(fP0-fP1).Magnitude(); }
+    double Area() const { return KEMConstants::Pi*fDiameter*(fP0-fP1).Magnitude(); }
     const KPosition Centroid() const { return (fP0 + fP1)*.5; }
 
     double DistanceTo(const KPosition& aPoint, KPosition& nearestPoint);

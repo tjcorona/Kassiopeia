@@ -114,14 +114,14 @@ int main()
 		// dice rectangle geometry
 
 		const double costheta = -1. + 2.*randomnumber();
-		const double phi1 = 2. * M_PI * randomnumber();
+		const double phi1 = 2. * KEMConstants::Pi * randomnumber();
 		const double sintheta = sqrt( 1. - POW2(costheta) );
 
 		N1[0] = sintheta*cos(phi1);
 		N1[1] = sintheta*sin(phi1);
 		N1[2] = costheta;
 
-		const double phi2 = 2. * M_PI * randomnumber();
+		const double phi2 = 2. * KEMConstants::Pi * randomnumber();
 
 		N2[0] = cos(phi2)*sin(phi1) - sin(phi2)*costheta*cos(phi1);
 		N2[1] = -cos(phi2)*cos(phi1) - sin(phi2)*costheta*sin(phi1);
@@ -149,7 +149,7 @@ int main()
 
 		const double costhetaFP = -1.+2.*randomnumber();
 		const double sinthetaFP = sqrt( 1. - POW2(costhetaFP) );
-		const double phiFP = 2.*M_PI*randomnumber();
+		const double phiFP = 2.*KEMConstants::Pi*randomnumber();
 
 		fPointDirections.push_back( KEMThreeVector(
 				sinthetaFP*cos(phiFP),

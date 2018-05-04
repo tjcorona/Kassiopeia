@@ -97,7 +97,7 @@ double PotentialMultipole(int degree, double* point, double* origin, std::vector
         }
     }
 
-    pMulti *= (1.0/(4.0*M_PI*KEMConstants::Eps0));
+    pMulti *= (1.0/(4.0*KEMConstants::Pi*KEMConstants::Eps0));
     return pMulti.real();
 }
 

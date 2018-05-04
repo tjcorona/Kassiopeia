@@ -380,7 +380,7 @@ int main(int argc, char* argv[])
     }
 
     std::cout<<""<<std::endl;
-    double C = Q/(4.*M_PI*KEMConstants::Eps0);
+    double C = Q/(4.*KEMConstants::Pi*KEMConstants::Eps0);
 
     double C_Analytic = 1.;
 

@@ -88,7 +88,7 @@ double KElectrostaticAnalyticTriangleIntegrator::Potential(const KTriangle* sour
 
 	I = fabs(I);
 
-	return I/(4.*M_PI*KEMConstants::Eps0);
+	return I/(4.*KEMConstants::Pi*KEMConstants::Eps0);
 }
 
 KEMThreeVector KElectrostaticAnalyticTriangleIntegrator

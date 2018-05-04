@@ -70,7 +70,7 @@ endforeach( BASENAME )
 # library
 kasper_internal_include_directories( ${TERMINATORS_HEADER_PATH} )
 add_library( KassiopeiaTerminators SHARED ${TERMINATORS_SOURCE_FILENAMES} )
-set_target_properties( KassiopeiaTerminators PROPERTIES COMPILE_FLAGS -Wno-overloaded-virtual )
+#set_target_properties( KassiopeiaTerminators PROPERTIES COMPILE_FLAGS -Wno-overloaded-virtual )
 target_link_libraries( KassiopeiaTerminators
     ${Kommon_LIBRARIES}
     ${KGeoBag_LIBRARIES}
