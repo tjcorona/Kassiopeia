@@ -88,6 +88,7 @@ set (KEMCORE_HEADERFILES
   ${CMAKE_CURRENT_SOURCE_DIR}/include/KSmartPointer.hh
   ${CMAKE_CURRENT_SOURCE_DIR}/include/KTimer.hh
   ${CMAKE_CURRENT_SOURCE_DIR}/include/KTypelist.hh
+  ${CMAKE_CURRENT_SOURCE_DIR}/include/KTypeManipulation.hh
   ${CMAKE_CURRENT_SOURCE_DIR}/include/KTypelistVisitor.hh
   )
 
@@ -123,10 +124,10 @@ add_library (KEMCore SHARED ${KEMCORE_SOURCEFILES})
 target_link_libraries (KEMCore ${Kommon_LIBRARIES})
 
 add_executable( KSmartPointer_test test/KSmartPointer_test.cc )
-  target_link_libraries( KSmartPointer_test 
+  target_link_libraries( KSmartPointer_test
     KEMCore
   )
-  
+
   kasper_install_executables( KSmartPointer_test )
 
 kasper_install_headers (${KEMCORE_HEADERFILES})

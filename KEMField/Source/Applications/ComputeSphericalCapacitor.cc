@@ -18,12 +18,12 @@
 // see KEMField::KElectrostaticBoundaryIntegratorFactory::Make(std::string)
 // for a complete list of options
 
-std::string integratorType{"numeric"};
-//std::string integratorType{"analytic"};
+// std::string integratorType{"numeric"};
+std::string integratorType{"analytic"};
 //std::string integratorType{"rwg"};
 
-std::string oclIntegratorType{"numeric"};
-//std::string oclIntegratorType{"analytic"};
+// std::string oclIntegratorType{"numeric"};
+std::string oclIntegratorType{"analytic"};
 //std::string oclIntegratorType{"rwg"};
 
 #include "KElectrostaticBoundaryIntegratorFactory.hh"
