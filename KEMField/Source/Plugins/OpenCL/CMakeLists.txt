@@ -60,7 +60,7 @@ mark_as_advanced(FORCE @PROJECT_NAME@_OPENCL_FASTRWG)
 if (@PROJECT_NAME@_OPENCL_FASTRWG)
   add_cflag(KEMFIELD_FASTRWG_VALUE=1)
 else (@PROJECT_NAME@_OPENCL_FASTRWG)
-  add_cflag(KEMFIELD_FASTRWG_VALUE=0)  
+  add_cflag(KEMFIELD_FASTRWG_VALUE=0)
 endif (@PROJECT_NAME@_OPENCL_FASTRWG)
 
 cmake_dependent_option (@PROJECT_NAME@_OPENCL_FASTDIELECTRICS "Enable the fast computation of Neumann boundary elements through the function RH_BoundaryRatioExceeded" OFF @PROJECT_NAME@_USE_OPENCL OFF)
@@ -68,7 +68,7 @@ mark_as_advanced(FORCE @PROJECT_NAME@_OPENCL_FASTDIELECTRICS)
 if (@PROJECT_NAME@_OPENCL_FASTDIELECTRICS)
   add_cflag(KEMFIELD_FASTDIELECTRICS_VALUE=1)
 else (@PROJECT_NAME@_OPENCL_FASTDIELECTRICS)
-  add_cflag(KEMFIELD_FASTDIELECTRICS_VALUE=0)  
+  add_cflag(KEMFIELD_FASTDIELECTRICS_VALUE=0)
 endif (@PROJECT_NAME@_OPENCL_FASTDIELECTRICS)
 
 
@@ -347,6 +347,8 @@ if (@PROJECT_NAME@_USE_OPENCL)
     KFMMath
     KFMMathUtilities
     KFMElectrostatics
+    KEMElectrostaticBoundaryIntegrals
+    KEMFieldExceptions
     ${OPENCL_LIBRARIES}
     )
 

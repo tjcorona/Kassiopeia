@@ -12,7 +12,9 @@
     #include "KMPIInterface.hh"
 #endif
 
+#ifndef KEMFIELD_DEFAULT_GPU_ID
 #define KEMFIELD_DEFAULT_GPU_ID 0
+#endif
 
 #ifndef DEFAULT_KERNEL_DIR
 #define DEFAULT_KERNEL_DIR "."

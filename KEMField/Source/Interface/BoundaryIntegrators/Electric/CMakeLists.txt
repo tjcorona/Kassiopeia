@@ -30,9 +30,14 @@ endforeach( BASENAME )
 kasper_internal_include_directories( ${ELECTRICBOUNDARYINTEGRATOR_ELECTRIC_HEADER_PATH} )
 add_library( KEMFieldElectricBoundaryIntegrators SHARED ${ELECTRICBOUNDARYINTEGRATOR_ELECTRIC_SOURCE_FILENAMES} )
 set_target_properties( KEMFieldElectricBoundaryIntegrators PROPERTIES COMPILE_FLAGS -Wno-overloaded-virtual )
-target_link_libraries( KEMFieldElectricBoundaryIntegrators 
+set(additional_libraries)
+if (@PROJECT_NAME@_USE_OPENCL)
+list(APPEND additional_libraries KEMOpenCLPlugin)
+endif()
+target_link_libraries( KEMFieldElectricBoundaryIntegrators
 	KEMElectrostaticBoundaryIntegrals
 	KEMFieldExceptions
+        ${additional_libraries}
 )
 
 # install
