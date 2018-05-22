@@ -44,6 +44,25 @@ if (@PROJECT_NAME@_OPENCL_INTERNAL_1_1)
   set (@PROJECT_NAME@_OPENCL_TEMP_INCLUDE_DIR_STR \"${CMAKE_SOURCE_DIR}/@PROJECT_NAME@/opencl/1.1\")
   string (REPLACE "\"" "" @PROJECT_NAME@_OPENCL_TEMP_INCLUDE_DIR_VAR ${@PROJECT_NAME@_OPENCL_TEMP_INCLUDE_DIR_STR} )
   set (@PROJECT_NAME@_OPENCL_CFLAGS ${@PROJECT_NAME@_OPENCL_CFLAGS} -isystem ${@PROJECT_NAME@_OPENCL_TEMP_INCLUDE_DIR_VAR})
+
+  if (APPLE)
+    install ( FILES
+    ${CMAKE_SOURCE_DIR}/@PROJECT_NAME@/opencl/1.2/OpenCL/cl.hpp
+    DESTINATION ${@PROJECT_NAME@_INCLUDE_INSTALL_DIR}/OpenCL
+    )
+  else()
+    install ( FILES
+      ${CMAKE_SOURCE_DIR}/@PROJECT_NAME@/opencl/1.2/CL/cl.h
+      ${CMAKE_SOURCE_DIR}/@PROJECT_NAME@/opencl/1.2/CL/cl_ext.h
+      ${CMAKE_SOURCE_DIR}/@PROJECT_NAME@/opencl/1.2/CL/cl_gl_ext.h
+      ${CMAKE_SOURCE_DIR}/@PROJECT_NAME@/opencl/1.2/CL/opencl.h
+      ${CMAKE_SOURCE_DIR}/@PROJECT_NAME@/opencl/1.2/CL/cl.hpp
+      ${CMAKE_SOURCE_DIR}/@PROJECT_NAME@/opencl/1.2/CL/cl_gl.h
+      ${CMAKE_SOURCE_DIR}/@PROJECT_NAME@/opencl/1.2/CL/cl_platform.h
+      DESTINATION ${@PROJECT_NAME@_INCLUDE_INSTALL_DIR}/CL
+      )
+  endif()
+
 endif (@PROJECT_NAME@_OPENCL_INTERNAL_1_1)
 
 cmake_dependent_option (@PROJECT_NAME@_OPENCL_INTERNAL_1_2 "Use internally packaged OpenCL 1.2 headers" OFF
@@ -53,6 +72,25 @@ if (@PROJECT_NAME@_OPENCL_INTERNAL_1_2)
     set (@PROJECT_NAME@_OPENCL_TEMP_INCLUDE_DIR_STR \"${CMAKE_SOURCE_DIR}/@PROJECT_NAME@/opencl/1.2\")
     string (REPLACE "\"" "" @PROJECT_NAME@_OPENCL_TEMP_INCLUDE_DIR_VAR ${@PROJECT_NAME@_OPENCL_TEMP_INCLUDE_DIR_STR} )
   set (@PROJECT_NAME@_OPENCL_CFLAGS ${@PROJECT_NAME@_OPENCL_CFLAGS} -isystem ${@PROJECT_NAME@_OPENCL_TEMP_INCLUDE_DIR_VAR})
+
+  if (APPLE)
+    install ( FILES
+    ${CMAKE_SOURCE_DIR}/@PROJECT_NAME@/opencl/1.1/OpenCL/cl.hpp
+    DESTINATION ${@PROJECT_NAME@_INCLUDE_INSTALL_DIR}/OpenCL
+    )
+  else()
+    install ( FILES
+      ${CMAKE_SOURCE_DIR}/@PROJECT_NAME@/opencl/1.1/CL/cl.h
+      ${CMAKE_SOURCE_DIR}/@PROJECT_NAME@/opencl/1.1/CL/cl_ext.h
+      ${CMAKE_SOURCE_DIR}/@PROJECT_NAME@/opencl/1.1/CL/cl_gl_ext.h
+      ${CMAKE_SOURCE_DIR}/@PROJECT_NAME@/opencl/1.1/CL/opencl.h
+      ${CMAKE_SOURCE_DIR}/@PROJECT_NAME@/opencl/1.1/CL/cl.hpp
+      ${CMAKE_SOURCE_DIR}/@PROJECT_NAME@/opencl/1.1/CL/cl_gl.h
+      ${CMAKE_SOURCE_DIR}/@PROJECT_NAME@/opencl/1.1/CL/cl_platform.h
+      DESTINATION ${@PROJECT_NAME@_INCLUDE_INSTALL_DIR}/CL
+      )
+  endif()
+
 endif (@PROJECT_NAME@_OPENCL_INTERNAL_1_2)
 
 cmake_dependent_option (@PROJECT_NAME@_OPENCL_FASTRWG "Activate the fast evaluation of electrostatic boundary integrals in RWG basis if no field point has to be computed on any surface." OFF @PROJECT_NAME@_USE_OPENCL OFF)
@@ -100,7 +138,6 @@ if (@PROJECT_NAME@_USE_OPENCL)
       -D KEMFIELD_OPENCL_PLATFORM=${KEMField_OPENCL_PLATFORM}
       -D KEMFIELD_OPENCL_DEVICE_TYPE=${@PROJECT_NAME@_OPENCL_DEVICE_TYPE}
       -o GenerateOpenCLHeader
-      -I${OPENCL_INCLUDE_DIRS}
       ${@PROJECT_NAME@_OPENCL_CFLAGS}
       -framework OpenCL
       ${SOURCE}/Plugins/OpenCL/Core/src/GenerateOpenCLHeader.cc
@@ -167,6 +204,7 @@ if (@PROJECT_NAME@_USE_OPENCL)
     #
     ${CMAKE_CURRENT_SOURCE_DIR}/BoundaryIntegrals/Electrostatic/include/KOpenCLElectrostaticBoundaryIntegrator.hh
     ${CMAKE_CURRENT_SOURCE_DIR}/BoundaryIntegrals/Electrostatic/include/KOpenCLElectrostaticBoundaryIntegratorFactory.hh
+    ${CMAKE_CURRENT_SOURCE_DIR}/BoundaryIntegrals/Electrostatic/include/KOpenCLElectrostaticBoundaryIntegratorConfig.hh
     ${CMAKE_CURRENT_SOURCE_DIR}/BoundaryIntegrals/ElectrostaticNumeric/include/KOpenCLElectrostaticNumericBoundaryIntegrator.hh
     ${CMAKE_CURRENT_SOURCE_DIR}/BoundaryIntegrals/RWG/include/KOpenCLElectrostaticRWGBoundaryIntegrator.hh
     #
